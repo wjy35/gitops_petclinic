@@ -1,6 +1,6 @@
 FROM eclipse-temurin:25-jdk-jammy
 
-LABEL maintainer="4"
+LABEL maintainer="5"
 
 EXPOSE 8080
 ADD target/*.jar /app.jar
