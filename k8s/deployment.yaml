@@ -17,6 +17,22 @@ spec:
           image: 966391709212.dkr.ecr.ap-southeast-2.amazonaws.com/user09-k8s-cluster-repo:c016e5c2919b3fef431280a97e5f53abf65b0c12
           ports:
             - containerPort: 8080
+          env:
+            - name: MYSQL_URL
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_URL
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
+            - name: MYSQL_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASS
           resources:
             requests:
               cpu: 250m
